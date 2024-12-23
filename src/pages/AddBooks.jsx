@@ -1,7 +1,9 @@
 import React from 'react';
+import useAuth from '../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const AddBooks = () => {
-    const {} = 
+    const { user } = useAuth();
 
     const handleAddBook = (e) => {
         e.preventDefault();
@@ -14,13 +16,32 @@ const AddBooks = () => {
         const description = form.description.value;
         const rating = parseFloat(form.rating.value);
         const image = form.image.value;
+        const createdBy = user?.email;
 
         const newBook = {
-            bookName, authorName, category, quantity, description, rating, image,
+            bookName, authorName, category, quantity, description, rating, image, createdBy
         };
 
-        console.log(newBook);
-
+        fetch('http://localhost:5000/books', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newBook)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your Book has been added!!",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    // navigate('/myApplications');
+                }
+            })
         // Reset the form
         form.reset();
     };
