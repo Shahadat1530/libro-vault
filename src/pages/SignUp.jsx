@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle } from "react-icons/fa";
+import Lottie from 'lottie-react';
+import registerLottie from '../assets/register-lottie.json'
 
 const SignUp = () => {
     const { createNewUser, updateUserProfile, setUser, handleGoogle } = useContext(AuthContext);
@@ -61,7 +63,10 @@ const SignUp = () => {
     }
 
     return (
-        <div className='max-w-screen-2xl mx-auto flex justify-center items-center'>
+        <div className='max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-center items-center my-7 bg-orange-50 p-3 md:p-10 rounded-lg'>
+            <div className='w-96'>
+                <Lottie animationData={registerLottie}></Lottie>
+            </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <form onSubmit={handleSignUp} className="card-body">
                     <div className="form-control">
