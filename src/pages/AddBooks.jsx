@@ -42,7 +42,6 @@ const AddBooks = () => {
                     // navigate('/myApplications');
                 }
             })
-        // Reset the form
         form.reset();
     };
 
@@ -50,7 +49,6 @@ const AddBooks = () => {
         <div className="max-w-screen-lg mx-auto p-10 bg-gray-100 shadow-md rounded-lg">
             <h2 className="text-2xl font-bold text-center mb-6">Add a New Book</h2>
             <form onSubmit={handleAddBook}>
-                {/* Book Name */}
                 <div className="mb-4">
                     <label htmlFor="bookName" className="block font-medium">Book Name</label>
                     <input
@@ -63,7 +61,6 @@ const AddBooks = () => {
                     />
                 </div>
 
-                {/* Author Name */}
                 <div className="mb-4">
                     <label htmlFor="authorName" className="block font-medium">Author Name</label>
                     <input
@@ -76,7 +73,6 @@ const AddBooks = () => {
                     />
                 </div>
 
-                {/* Category */}
                 <div className="mb-4">
                     <label htmlFor="category" className="block font-medium">Category</label>
                     <select
@@ -94,7 +90,6 @@ const AddBooks = () => {
                     </select>
                 </div>
 
-                {/* Quantity */}
                 <div className="mb-4">
                     <label htmlFor="quantity" className="block font-medium">Quantity</label>
                     <input
@@ -108,7 +103,6 @@ const AddBooks = () => {
                     />
                 </div>
 
-                {/* Short Description */}
                 <div className="mb-4">
                     <label htmlFor="description" className="block font-medium">Short Description</label>
                     <textarea
@@ -120,7 +114,6 @@ const AddBooks = () => {
                     ></textarea>
                 </div>
 
-                {/* Rating */}
                 <div className="mb-4">
                     <label htmlFor="rating" className="block font-medium">Rating</label>
                     <input
@@ -136,7 +129,6 @@ const AddBooks = () => {
                     />
                 </div>
 
-                {/* Image */}
                 <div className="mb-4">
                     <label htmlFor="image" className="block font-medium">Book Cover Image URL</label>
                     <input
@@ -149,7 +141,6 @@ const AddBooks = () => {
                     />
                 </div>
 
-                {/* Submit Button */}
                 <button
                     type="submit"
                     className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
