@@ -7,6 +7,15 @@ const NavBar = () => {
 
     const links = <>
         <li><NavLink to='/' className="nav-link px-3 py-2 rounded-md text-gray-800 hover:text-white transition duration-300 ease-in-out">Home</NavLink></li>
+        {
+            user && user?.email ?
+                <>
+                    <li><NavLink to='/all-books' className="nav-link px-3 py-2 rounded-md text-gray-800 hover:text-white transition duration-300 ease-in-out">All Books</NavLink></li>
+                    <li><NavLink to='/add-books' className="nav-link px-3 py-2 rounded-md text-gray-800 hover:text-white transition duration-300 ease-in-out">Add Books</NavLink></li>
+                    <li><NavLink to='/borrowed-books' className="nav-link px-3 py-2 rounded-md text-gray-800 hover:text-white transition duration-300 ease-in-out">Borrowed Books</NavLink></li>
+                </>
+                : ''
+        }
     </>;
 
     return (
@@ -50,7 +59,7 @@ const NavBar = () => {
                                     src={user?.photoURL}
                                     alt="User Avatar"
                                 />
-                                <p className="absolute bottom-0 left-0 right-0 text-center text-white bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <p className="absolute -bottom-12 text-center text-white bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-300">
                                     {user.displayName}
                                 </p>
                             </div>
