@@ -5,9 +5,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <div>Hello!</div>
   },
-  // {
-  //   path:'*',
-  //   element:<ErrorPage></ErrorPage>
-  // }
+  {
+    path:'*',
+    element:<ErrorPage></ErrorPage>
+  }
 ])
 export default router;
