@@ -6,6 +6,7 @@ import Login from '../pages/Login';
 import Home from '../Home/Home';
 import AddBooks from '../pages/AddBooks';
 import AllBooks from '../pages/AllBooks';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -18,12 +19,12 @@ const router = createBrowserRouter([
       },
       {
         path:'/all-books',
-        element:<AllBooks></AllBooks>,
+        element:<PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
         loader:() => fetch('http://localhost:5000/books')
       },
       {
         path:'/add-books',
-        element:<AddBooks></AddBooks>
+        element:<PrivateRoute><AddBooks></AddBooks></PrivateRoute>
       },
       {
         path:'/login',

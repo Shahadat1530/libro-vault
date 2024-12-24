@@ -14,7 +14,7 @@ const AllBooks = () => {
                 Whether you're looking for knowledge, adventure, or entertainment, our library has something for everyone.
                 Start exploring today!
             </p>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-6 p-2'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-10 p-2'>
                 {
                     books.map(book => 
                     <BookCards

@@ -4,7 +4,7 @@ const BookCards = ({ book }) => {
     const { image, bookName, authorName, category } = book;
     return (
         <div className='h-[600px]'>
-            <div className="card card-compact h-full bg-base-100 hover:shadow-xl">
+            <div className="card card-compact h-full bg-base-100 hover:shadow-2xl hover:-translate-y-6">
                 <figure className='h-96'>
                     <img
                         src={image}
