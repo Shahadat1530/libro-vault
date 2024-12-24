@@ -7,38 +7,44 @@ import Home from '../Home/Home';
 import AddBooks from '../pages/AddBooks';
 import AllBooks from '../pages/AllBooks';
 import PrivateRoute from './PrivateRoute';
+import UpdateBook from '../pages/UpdateBook';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    children:[
+    children: [
       {
-        path:'/',
-        element:<Home></Home>
+        path: '/',
+        element: <Home></Home>
       },
       {
-        path:'/all-books',
-        element:<PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
-        loader:() => fetch('http://localhost:5000/books')
+        path: '/all-books',
+        element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/books')
       },
       {
-        path:'/add-books',
-        element:<PrivateRoute><AddBooks></AddBooks></PrivateRoute>
+        path: '/add-books',
+        element: <PrivateRoute><AddBooks></AddBooks></PrivateRoute>
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/update/:id',
+        element: <PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
       },
       {
-        path:'/register',
-        element:<SignUp></SignUp>
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <SignUp></SignUp>
       }
     ]
   },
   {
-    path:'*',
-    element:<ErrorPage></ErrorPage>
+    path: '*',
+    element: <ErrorPage></ErrorPage>
   }
 ])
 export default router;
