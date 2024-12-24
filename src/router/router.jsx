@@ -8,6 +8,7 @@ import AddBooks from '../pages/AddBooks';
 import AllBooks from '../pages/AllBooks';
 import PrivateRoute from './PrivateRoute';
 import UpdateBook from '../pages/UpdateBook';
+import BooksByCategory from '../pages/BooksByCategory';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/categories/:category',
-        element: <PrivateRoute><AddBooks></AddBooks></PrivateRoute>
+        element: <PrivateRoute><BooksByCategory></BooksByCategory></PrivateRoute>
       },
       {
         path: '/update/:id',
