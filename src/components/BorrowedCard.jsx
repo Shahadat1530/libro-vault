@@ -1,6 +1,42 @@
 import React from "react";
+import Swal from "sweetalert2";
 
-const BorrowedCard = ({ book }) => {
+const BorrowedCard = ({ book, onDelete }) => {
+
+    const handleDelete = (id, bookId) => {
+        console.log("Borrowed Book ID:", id);
+        console.log("Book ID:", bookId);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, return it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/borrowed-books/${id}?bookId=${bookId}`, {
+                    method: 'DELETE',
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount) {
+                            Swal.fire({
+                                title: "Returned!",
+                                text: "Book has been returned.",
+                                icon: "success",
+                            });
+                            if (onDelete) {
+                                onDelete(id);
+                            }
+                        }
+                    })
+            }
+        });
+    };
+
     return (
         <div className="card w-full bg-base-100 shadow-xl mx-auto my-4">
             <figure>
@@ -12,7 +48,7 @@ const BorrowedCard = ({ book }) => {
                 <p className="text-gray-600"><strong>Category:</strong> <span className="font-semibold">{book.bookCategory}</span></p>
                 <p className="text-red-500"><strong>Return By:</strong> <span className="font-semibold">{book.returnDate}</span></p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-error text-white">Return Book</button>
+                    <button onClick={() => handleDelete(book._id, book.bookId)} className="btn btn-error text-white">Return Book</button>
                 </div>
             </div>
         </div>

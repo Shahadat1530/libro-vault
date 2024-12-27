@@ -21,6 +21,10 @@ const BorrowedBooks = () => {
         }
     }, [user?.email]);
 
+    const handleDeleteVisa = (id) => {
+        setBooks(books.filter(book => book._id !== id));
+    };
+    
     return (
         <div className='max-w-screen-2xl mx-auto my-10 text-center'>
             <h4 className='font-semibold text-4xl'>Borrowed Books</h4>
@@ -30,6 +34,7 @@ const BorrowedBooks = () => {
                         <BorrowedCard
                             key={book._id}
                             book={book}
+                            onDelete={handleDeleteVisa}
                         ></BorrowedCard>)}
                 </div>
             ) : (
