@@ -1,28 +1,49 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const BookDetails = () => {
     const { user } = useAuth();
     const book = useLoaderData();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleBorrowBook = (e) => {
         e.preventDefault();
         const form = e.target;
 
         const borrowedBook = {
-            bookID: book._id,
+            bookId: book._id,
             bookName: book.bookName,
             borrowerName: form.borrowerName.value,
             borrowerEmail: form.borrowerEmail.value,
             returnDate: form.returnDate.value,
         };
 
-        console.log("Borrowed Book Data:", borrowedBook);
-        // Here you can send the `borrowedBook` data to the server via a POST request.
-
-        setIsModalOpen(false); 
+        axios.post('http://localhost:5000/borrowed-books', borrowedBook)
+            .then((response) => {
+                const data = response.data;
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Book Borrowed Successfully!!",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    navigate('/');
+                }
+            })
+            .catch((error) => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: error.response?.data?.message || error.message,
+                    showConfirmButton: true,
+                });
+            })
     };
 
     return (

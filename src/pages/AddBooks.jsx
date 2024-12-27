@@ -39,7 +39,6 @@ const AddBooks = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    // navigate('/myApplications');
                 }
             })
         form.reset();
