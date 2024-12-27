@@ -17,6 +17,9 @@ const BookDetails = () => {
         const borrowedBook = {
             bookId: book._id,
             bookName: book.bookName,
+            bookImage: book.image,
+            bookAuthor: book.authorName,
+            bookCategory: book.category,
             borrowerName: form.borrowerName.value,
             borrowerEmail: form.borrowerEmail.value,
             returnDate: form.returnDate.value,
@@ -33,7 +36,7 @@ const BookDetails = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    navigate('/');
+                    navigate('/borrowed-books');
                 }
             })
             .catch((error) => {

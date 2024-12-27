@@ -10,6 +10,7 @@ import PrivateRoute from './PrivateRoute';
 import UpdateBook from '../pages/UpdateBook';
 import BooksByCategory from '../pages/BooksByCategory';
 import BookDetails from '../pages/BookDetails';
+import BorrowedBooks from '../pages/BorrowedBooks';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/add-books',
         element: <PrivateRoute><AddBooks></AddBooks></PrivateRoute>
+      },
+      {
+        path: '/borrowed-books',
+        element: <PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>
       },
       {
         path: '/categories/:category',
