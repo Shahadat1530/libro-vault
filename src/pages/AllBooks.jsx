@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BookCards from '../components/BookCards';
+import { Helmet } from 'react-helmet-async';
 
 const AllBooks = () => {
     const booksData = useLoaderData();
@@ -13,6 +14,9 @@ const AllBooks = () => {
 
     return (
         <div className='my-8 max-w-screen-2xl mx-auto'>
+            <Helmet>
+                <title>All Books</title>
+            </Helmet>
             <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">
                 Explore Our Library Collection
             </h2>

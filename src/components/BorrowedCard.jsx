@@ -4,8 +4,6 @@ import Swal from "sweetalert2";
 const BorrowedCard = ({ book, onDelete }) => {
 
     const handleDelete = (id, bookId) => {
-        console.log("Borrowed Book ID:", id);
-        console.log("Book ID:", bookId);
 
         Swal.fire({
             title: "Are you sure?",

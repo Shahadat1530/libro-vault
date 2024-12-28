@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../hooks/useAuth';
 import BorrowedCard from '../components/BorrowedCard';
+import { Helmet } from 'react-helmet-async';
 
 const BorrowedBooks = () => {
     const { user } = useAuth();
@@ -24,9 +25,12 @@ const BorrowedBooks = () => {
     const handleDeleteVisa = (id) => {
         setBooks(books.filter(book => book._id !== id));
     };
-    
+
     return (
         <div className='max-w-screen-2xl mx-auto my-10 text-center'>
+            <Helmet>
+                <title>Borrowed_Books</title>
+            </Helmet>
             <h4 className='font-semibold text-4xl'>Borrowed Books</h4>
             {books.length > 0 ? (
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

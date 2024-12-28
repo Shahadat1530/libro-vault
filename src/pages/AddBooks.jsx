@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const AddBooks = () => {
     const { user } = useAuth();
@@ -45,7 +46,11 @@ const AddBooks = () => {
     };
 
     return (
+
         <div className="max-w-screen-lg mx-auto p-10 bg-gray-100 shadow-md rounded-lg">
+            <Helmet>
+                <title>Add Books</title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-center mb-6">Add a New Book</h2>
             <form onSubmit={handleAddBook}>
                 <div className="mb-4">
