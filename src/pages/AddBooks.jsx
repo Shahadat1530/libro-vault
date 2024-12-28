@@ -97,7 +97,7 @@ const AddBooks = () => {
                         name="quantity"
                         className="w-full px-4 py-2 border rounded"
                         placeholder="Enter quantity"
-                        min="1"
+                        min="0"
                         required
                     />
                 </div>

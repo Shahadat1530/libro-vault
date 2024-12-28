@@ -5,10 +5,10 @@ const BookCategories = () => {
     const navigate = useNavigate();
 
     const categories = [
-        { name: "Novel", image: "https://via.placeholder.com/150?text=Novel" },
-        { name: "Thriller", image: "https://via.placeholder.com/150?text=Thriller" },
-        { name: "History", image: "https://via.placeholder.com/150?text=History" },
-        { name: "Sci-Fi", image: "https://via.placeholder.com/150?text=Sci-Fi" },
+        { name: "Novel", image: "https://img.freepik.com/free-photo/beautiful-composition-different-books_23-2148883808.jpg?uid=R174965789&ga=GA1.1.76953405.1704461102&semt=ais_hybrid" },
+        { name: "Thriller", image: "https://img.freepik.com/free-photo/man-walks-along-road-forest-fog-view-from-back-generative-al_169016-28620.jpg?uid=R174965789&ga=GA1.1.76953405.1704461102&semt=ais_hybrid" },
+        { name: "History", image: "https://img.freepik.com/free-photo/elevated-view-burnt-paper-pen-ink-bottle_23-2147837106.jpg?uid=R174965789&ga=GA1.1.76953405.1704461102&semt=ais_hybrid" },
+        { name: "Sci-Fi", image: "https://img.freepik.com/free-photo/ai-nuclear-energy-background-future-innovation-disruptive-technology_53876-129783.jpg?uid=R174965789&ga=GA1.1.76953405.1704461102&semt=ais_hybrid" },
     ];
 
     const handleCategoryClick = (category) => {
