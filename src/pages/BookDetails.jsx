@@ -25,7 +25,7 @@ const BookDetails = () => {
             returnDate: form.returnDate.value,
         };
 
-        axios.post('http://localhost:5000/borrowed-books', borrowedBook)
+        axios.post('https://librovault-server.vercel.app/borrowed-books', borrowedBook)
             .then((response) => {
                 const data = response.data;
                 if (data.insertedId) {

@@ -18,7 +18,7 @@ const UpdateBook = () => {
             image: form.image.value,
         };
 
-        fetch(`http://localhost:5000/books/${book._id}`, {
+        fetch(`https://librovault-server.vercel.app/books/${book._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

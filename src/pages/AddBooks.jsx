@@ -23,7 +23,7 @@ const AddBooks = () => {
             bookName, authorName, category, quantity, description, rating, image, createdBy
         };
 
-        fetch('http://localhost:5000/books', {
+        fetch('https://librovault-server.vercel.app/books', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

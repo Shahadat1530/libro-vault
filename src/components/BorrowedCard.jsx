@@ -15,7 +15,7 @@ const BorrowedCard = ({ book, onDelete }) => {
             confirmButtonText: "Yes, return it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/borrowed-books/${id}?bookId=${bookId}`, {
+                fetch(`https://librovault-server.vercel.app/borrowed-books/${id}?bookId=${bookId}`, {
                     method: 'DELETE',
                 })
                     .then((res) => res.json())

@@ -7,7 +7,7 @@ const BooksByCategory = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/books/category/${category}`)
+        fetch(`https://librovault-server.vercel.app/books/category/${category}`)
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])

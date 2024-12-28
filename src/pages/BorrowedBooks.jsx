@@ -11,7 +11,7 @@ const BorrowedBooks = () => {
     useEffect(() => {
         if (user?.email) {
             axios
-                .get('http://localhost:5000/borrowed-books')
+                .get('https://librovault-server.vercel.app/borrowed-books')
                 .then((response) => {
                     const allBooks = response.data;
                     const userBooks = allBooks.filter(

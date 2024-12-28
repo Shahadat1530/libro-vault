@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: '/all-books',
         element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/books')
+        loader: () => fetch('https://librovault-server.vercel.app/books')
       },
       {
         path: '/add-books',
@@ -41,12 +41,12 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
+        loader: ({params}) => fetch(`https://librovault-server.vercel.app/books/${params.id}`)
       },
       {
         path: '/books/:id',
         element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
+        loader: ({params}) => fetch(`https://librovault-server.vercel.app/books/${params.id}`)
       },
       {
         path: '/login',
