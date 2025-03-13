@@ -46,43 +46,83 @@ const AddBooks = () => {
     };
 
     return (
-
-        <div className="max-w-screen-lg mx-auto p-10 bg-gray-100 shadow-md rounded-lg">
+        <div 
+            className="max-w-screen-lg mx-auto p-10 shadow-md rounded-lg"
+            style={{ 
+                background: 'linear-gradient(to bottom right, #58fbda, #00c9f5)',
+                border: '1px solid #008dff'
+            }}
+        >
             <Helmet>
                 <title>Add Books</title>
             </Helmet>
-            <h2 className="text-2xl font-bold text-center mb-6">Add a New Book</h2>
+            <h2 
+                className="text-3xl font-bold text-center mb-6"
+                style={{ color: '#4338ca' }}
+            >
+                Add a New Book
+            </h2>
             <form onSubmit={handleAddBook}>
                 <div className="mb-4">
-                    <label htmlFor="bookName" className="block font-medium">Book Name</label>
+                    <label 
+                        htmlFor="bookName" 
+                        className="block font-medium"
+                        style={{ color: '#4338ca' }}
+                    >
+                        Book Name
+                    </label>
                     <input
                         type="text"
                         id="bookName"
                         name="bookName"
-                        className="w-full px-4 py-2 border rounded"
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2"
                         placeholder="Enter book name"
+                        style={{ 
+                            borderColor: '#008dff',
+                            focusRingColor: '#4338ca'
+                        }}
                         required
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="authorName" className="block font-medium">Author Name</label>
+                    <label 
+                        htmlFor="authorName" 
+                        className="block font-medium"
+                        style={{ color: '#4338ca' }}
+                    >
+                        Author Name
+                    </label>
                     <input
                         type="text"
                         id="authorName"
                         name="authorName"
-                        className="w-full px-4 py-2 border rounded"
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2"
                         placeholder="Enter author name"
+                        style={{ 
+                            borderColor: '#008dff',
+                            focusRingColor: '#4338ca'
+                        }}
                         required
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="category" className="block font-medium">Category</label>
+                    <label 
+                        htmlFor="category" 
+                        className="block font-medium"
+                        style={{ color: '#4338ca' }}
+                    >
+                        Category
+                    </label>
                     <select
                         id="category"
                         name="category"
-                        className="w-full px-4 py-2 border rounded"
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2"
+                        style={{ 
+                            borderColor: '#008dff',
+                            focusRingColor: '#4338ca'
+                        }}
                         required
                     >
                         <option value="">Select Book Category</option>
@@ -95,59 +135,102 @@ const AddBooks = () => {
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="quantity" className="block font-medium">Quantity</label>
+                    <label 
+                        htmlFor="quantity" 
+                        className="block font-medium"
+                        style={{ color: '#4338ca' }}
+                    >
+                        Quantity
+                    </label>
                     <input
                         type="number"
                         id="quantity"
                         name="quantity"
-                        className="w-full px-4 py-2 border rounded"
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2"
                         placeholder="Enter quantity"
                         min="0"
+                        style={{ 
+                            borderColor: '#008dff',
+                            focusRingColor: '#4338ca'
+                        }}
                         required
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="description" className="block font-medium">Short Description</label>
+                    <label 
+                        htmlFor="description" 
+                        className="block font-medium"
+                        style={{ color: '#4338ca' }}
+                    >
+                        Short Description
+                    </label>
                     <textarea
                         id="description"
                         name="description"
-                        className="w-full px-4 py-2 border rounded"
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2"
                         placeholder="Write a brief description"
+                        style={{ 
+                            borderColor: '#008dff',
+                            focusRingColor: '#4338ca'
+                        }}
                         required
                     ></textarea>
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="rating" className="block font-medium">Rating</label>
+                    <label 
+                        htmlFor="rating" 
+                        className="block font-medium"
+                        style={{ color: '#4338ca' }}
+                    >
+                        Rating
+                    </label>
                     <input
                         type="number"
                         id="rating"
                         name="rating"
-                        className="w-full px-4 py-2 border rounded"
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2"
                         placeholder="Enter rating (1-5)"
                         min="1"
                         max="5"
                         step="0.1"
+                        style={{ 
+                            borderColor: '#008dff',
+                            focusRingColor: '#4338ca'
+                        }}
                         required
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label htmlFor="image" className="block font-medium">Book Cover Image URL</label>
+                    <label 
+                        htmlFor="image" 
+                        className="block font-medium"
+                        style={{ color: '#4338ca' }}
+                    >
+                        Book Cover Image URL
+                    </label>
                     <input
                         type="url"
                         id="image"
                         name="image"
-                        className="w-full px-4 py-2 border rounded"
+                        className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2"
                         placeholder="Enter image URL"
+                        style={{ 
+                            borderColor: '#008dff',
+                            focusRingColor: '#4338ca'
+                        }}
                         required
                     />
                 </div>
 
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+                    className="w-full py-2 rounded-md text-white font-semibold transition-all duration-300 hover:shadow-lg"
+                    style={{ 
+                        background: 'linear-gradient(to right, #4338ca, #008dff)',
+                    }}
                 >
                     Add Book
                 </button>

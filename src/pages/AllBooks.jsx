@@ -17,10 +17,10 @@ const AllBooks = () => {
             <Helmet>
                 <title>All Books</title>
             </Helmet>
-            <h2 className="text-4xl font-bold text-center mb-6 text-gray-800">
+            <h2 className="text-4xl font-bold text-center mb-6" style={{ color: '#4338ca' }}>
                 Explore Our Library Collection
             </h2>
-            <p className="text-lg text-center text-gray-600">
+            <p className="text-lg text-center" style={{ color: '#978ab5' }}>
                 Discover a wide range of books across various genres, from thrilling mysteries to captivating dramas.
                 Whether you're looking for knowledge, adventure, or entertainment, our library has something for everyone.
                 Start exploring today!
@@ -29,7 +29,11 @@ const AllBooks = () => {
             <div className="flex justify-center my-6">
                 <button
                     onClick={handleFilterAvailableBooks}
-                    className="btn btn-primary text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+                    className="btn px-6 py-2 rounded-lg text-[#fcf7ff] transition duration-300 ease-in-out"
+                    style={{
+                        backgroundColor: '#4338ca',
+                        '&:hover': { backgroundColor: '#978ab5' }
+                    }}
                 >
                     Show Available Books
                 </button>
