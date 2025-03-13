@@ -27,7 +27,7 @@ const BorrowedBooks = () => {
     };
 
     return (
-        <div className='max-w-screen-2xl mx-auto my-10 text-center'>
+        <div className='max-w-screen-2xl min-h-[66vh] mx-auto my-10 text-center'>
             <Helmet>
                 <title>Borrowed_Books</title>
             </Helmet>

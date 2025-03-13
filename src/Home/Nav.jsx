@@ -9,21 +9,21 @@ const NavBar = () => {
         <>
             <li><NavLink 
                 to='/' 
-                className="nav-link px-3 py-2 rounded-md text-[#4338ca] hover:bg-[#4338ca] hover:text-[#fcf7ff] transition duration-300 ease-in-out"
+                className="nav-link px-3 py-2 rounded-md text-white hover:bg-[#008dff] hover:text-white transition duration-300 ease-in-out"
             >Home</NavLink></li>
             {user && user?.email ? (
                 <>
                     <li><NavLink 
                         to='/all-books' 
-                        className="nav-link px-3 py-2 rounded-md text-[#4338ca] hover:bg-[#4338ca] hover:text-[#fcf7ff] transition duration-300 ease-in-out"
+                        className="nav-link px-3 py-2 rounded-md text-white hover:bg-[#008dff] hover:text-white transition duration-300 ease-in-out"
                     >All Books</NavLink></li>
                     <li><NavLink 
                         to='/add-books' 
-                        className="nav-link px-3 py-2 rounded-md text-[#4338ca] hover:bg-[#4338ca] hover:text-[#fcf7ff] transition duration-300 ease-in-out"
+                        className="nav-link px-3 py-2 rounded-md text-white hover:bg-[#008dff] hover:text-white transition duration-300 ease-in-out"
                     >Add Books</NavLink></li>
                     <li><NavLink 
                         to='/borrowed-books' 
-                        className="nav-link px-3 py-2 rounded-md text-[#4338ca] hover:bg-[#4338ca] hover:text-[#fcf7ff] transition duration-300 ease-in-out"
+                        className="nav-link px-3 py-2 rounded-md text-white hover:bg-[#008dff] hover:text-white transition duration-300 ease-in-out"
                     >Borrowed Books</NavLink></li>
                 </>
             ) : null}
@@ -32,7 +32,10 @@ const NavBar = () => {
 
     return (
         <div className="sticky top-0 z-50 shadow-md">
-            <div className="navbar" style={{ backgroundColor: '#fcf7ff' }}>
+            <div 
+                className="navbar" 
+                style={{ backgroundColor: '#4338ca' }} // 60% dominant color
+            >
                 <div className="max-w-screen-2xl mx-auto w-full px-4">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -42,7 +45,7 @@ const NavBar = () => {
                                     className="h-5 w-5"
                                     fill="none"
                                     viewBox="0 0 24 24"
-                                    stroke="#4338ca"
+                                    stroke="#58fbda" // 10% accent
                                 >
                                     <path
                                         strokeLinecap="round"
@@ -55,12 +58,14 @@ const NavBar = () => {
                             <ul
                                 tabIndex={0}
                                 className="menu menu-sm dropdown-content rounded-box z-50 mt-3 w-52 p-2 shadow"
-                                style={{ backgroundColor: '#fffade' }}
+                                style={{ backgroundColor: '#008dff' }} // 30% secondary color
                             >
                                 {links}
                             </ul>
                         </div>
-                        <a className="btn btn-ghost text-xl text-[#4338ca] hover:bg-[#978ab5] hover:text-[#fcf7ff]">
+                        <a 
+                            className="btn btn-ghost text-xl text-white hover:bg-[#008dff] hover:text-white"
+                        >
                             Libro Vault
                         </a>
                     </div>
@@ -74,17 +79,19 @@ const NavBar = () => {
                             <>
                                 <div className="relative group">
                                     <img
-                                        className="w-10 rounded-full border-2 border-[#978ab5]"
+                                        className="w-10 rounded-full border-2 border-[#00c9f5]" // 10% accent
                                         src={user?.photoURL}
                                         alt="User Avatar"
                                     />
-                                    <p className="absolute -bottom-12 text-center text-[#4338ca] bg-[#fffade] bg-opacity-90 opacity-0 group-hover:opacity-100 transition duration-300 px-2 py-1 rounded">
+                                    <p 
+                                        className="absolute -bottom-12 text-center text-white bg-[#008dff] bg-opacity-90 opacity-0 group-hover:opacity-100 transition duration-300 px-2 py-1 rounded" // 30% secondary
+                                    >
                                         {user.displayName}
                                     </p>
                                 </div>
                                 <button
                                     onClick={logOut}
-                                    className="bg-[#4338ca] text-[#fcf7ff] font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-[#978ab5]"
+                                    className="bg-[#008dff] text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-[#00c9f5]" // 30% to 10% hover
                                 >
                                     Log-Out
                                 </button>
@@ -93,11 +100,11 @@ const NavBar = () => {
                             <>
                                 <NavLink 
                                     to='/login' 
-                                    className="bg-[#4338ca] text-[#fcf7ff] font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-[#978ab5]"
+                                    className="bg-[#008dff] text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-[#00c9f5]" // 30% to 10% hover
                                 >Login</NavLink>
                                 <NavLink 
                                     to='/register' 
-                                    className="bg-[#4338ca] text-[#fcf7ff] font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-[#978ab5]"
+                                    className="bg-[#008dff] text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out hover:bg-[#00c9f5]" // 30% to 10% hover
                                 >Register</NavLink>
                             </>
                         )}

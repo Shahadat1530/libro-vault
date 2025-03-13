@@ -23,17 +23,20 @@ const UpcomingEvents = () => {
     ];
 
     return (
-        <div className="max-w-screen-2xl mx-auto my-10 px-4 bg-orange-100 py-6 rounded-lg">
-            <h2 className="text-3xl font-bold text-center mb-6">Upcoming Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-screen-2xl mx-auto my-10 px-4 py-6 rounded-lg" style={{ backgroundColor: '#4338ca' }}>
+            <h2 className="text-3xl font-bold text-center mb-6" style={{ color: '#ffffff' }}>
+                Upcoming Events
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {events.map((event) => (
                     <div
                         key={event.id}
-                        className="bg-white p-6 rounded-lg shadow transform hover:scale-105 transition duration-300"
+                        className="bg-[#008dff] p-4 rounded-lg shadow transform hover:scale-105 transition duration-300" 
+                        style={{ color: '#ffffff' }} 
                     >
                         <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                        <p className="text-gray-600 mb-2"><strong>Date:</strong> {event.date}</p>
-                        <p className="text-gray-600">{event.description}</p>
+                        <p className="mb-2"><strong>Date:</strong> {event.date}</p>
+                        <p>{event.description}</p>
                     </div>
                 ))}
             </div>

@@ -47,7 +47,7 @@ const AddBooks = () => {
 
     return (
         <div 
-            className="max-w-screen-lg mx-auto p-10 shadow-md rounded-lg"
+            className="max-w-screen-lg mx-auto p-10 shadow-md rounded-lg my-10"
             style={{ 
                 background: 'linear-gradient(to bottom right, #58fbda, #00c9f5)',
                 border: '1px solid #008dff'

@@ -17,10 +17,16 @@ const AllBooks = () => {
             <Helmet>
                 <title>All Books</title>
             </Helmet>
-            <h2 className="text-4xl font-bold text-center mb-6" style={{ color: '#4338ca' }}>
+            <h2 
+                className="text-4xl font-bold text-center mb-6"
+                style={{ color: '#4338ca' }}
+            >
                 Explore Our Library Collection
             </h2>
-            <p className="text-lg text-center" style={{ color: '#978ab5' }}>
+            <p 
+                className="text-lg text-center"
+                style={{ color: '#008dff' }}
+            >
                 Discover a wide range of books across various genres, from thrilling mysteries to captivating dramas.
                 Whether you're looking for knowledge, adventure, or entertainment, our library has something for everyone.
                 Start exploring today!
@@ -29,10 +35,9 @@ const AllBooks = () => {
             <div className="flex justify-center my-6">
                 <button
                     onClick={handleFilterAvailableBooks}
-                    className="btn px-6 py-2 rounded-lg text-[#fcf7ff] transition duration-300 ease-in-out"
+                    className="btn px-6 py-2 rounded-lg text-white font-semibold transition-all duration-300 hover:shadow-lg"
                     style={{
-                        backgroundColor: '#4338ca',
-                        '&:hover': { backgroundColor: '#978ab5' }
+                        background: 'linear-gradient(to right, #4338ca, #008dff)',
                     }}
                 >
                     Show Available Books
@@ -45,7 +50,7 @@ const AllBooks = () => {
                         <BookCards
                             key={book._id}
                             book={book}
-                        ></BookCards>
+                        />
                     ))
                 }
             </div>
